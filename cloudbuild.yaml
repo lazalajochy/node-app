@@ -1,8 +1,8 @@
 steps:
   - name: 'gcr.io/cloud-builders/gcloud'
     args: ['build', 'deploy']
+    service_account: "projects/[decent-essence-448819-t5]/serviceAccounts/[881936334520-compute@developer.gserviceaccount.com]"
 
 options:
   logging: CLOUD_LOGGING_ONLY  
   default_logs_bucket_behavior: REGIONAL_USER_OWNED_BUCKET 
-  service_account: "projects/[decent-essence-448819-t5]/serviceAccounts/[881936334520-compute@developer.gserviceaccount.com]"

@@ -4,5 +4,5 @@ steps:
 
 options:
   logging: CLOUD_LOGGING_ONLY  
-  logs_bucket: "gs://log-build-node"  
+  default_logs_bucket_behavior: REGIONAL_USER_OWNED_BUCKET 
   service_account: "projects/[decent-essence-448819-t5]/serviceAccounts/[881936334520-compute@developer.gserviceaccount.com]"

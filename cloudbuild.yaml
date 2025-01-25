@@ -3,6 +3,6 @@ steps:
     args: ['build', 'deploy']
 
 options:
-  logging: CLOUD_LOGGING_ONLY  # Para logs solo en Cloud Logging
-  logs_bucket: "gs:// log-build-node"  # Reemplaza con tu bucket real
+  logging: CLOUD_LOGGING_ONLY  
+  logs_bucket: "gs://log-build-node"  
   service_account: "projects/[decent-essence-448819-t5]/serviceAccounts/[881936334520-compute@developer.gserviceaccount.com]"

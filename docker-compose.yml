@@ -1,0 +1,22 @@
+services:
+  db-api-rest:
+    image: postgres:latest
+    container_name: db-api-rest
+    restart: always
+    environment:
+      POSTGRES_PASSWORD: ${_POSTGRES_PASSWORD}
+      POSTGRES_USER: ${_POSTGRES_USER}
+      POSTGRES_DB: ${_POSTGRES_DB}
+    ports:
+      - "5432:5432"
+    volumes:
+      - pg_data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U ${POSTGRES_USER}"]
+      interval: 10s
+      retries: 5
+      start_period: 5s
+      timeout: 5s
+
+volumes:
+  pg_data:

@@ -20,7 +20,7 @@ try {
 
 
 app.get('/', (req, res) => {
-    res.json({ message: `${process.env._SERVICE_NAME}`, text: 'We can do it now and today. Yay!! 🌟', connection: connMessage });
+    res.json({ message:  'We can do it now and today. Yay!! 🌟', connection: connMessage });
 
 });
 

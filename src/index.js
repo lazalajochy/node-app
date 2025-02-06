@@ -25,6 +25,7 @@ app.get('/', (req, res) => {
 });
 
 console.log(process.env.HOST, " hello hello")
+console.log(process.env.DATABASE_NAME, " hello hello again")
 app.listen(3000, () => {
     console.log(`App is listening on port 3000`);
 });

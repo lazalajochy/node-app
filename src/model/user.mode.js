@@ -2,7 +2,7 @@ import { Sequelize } from "sequelize";
 import { db } from "../config/config.js";
 const User = db.define("User", {
     email: {
-      type: DataTypes.STRING,
+      type: Sequelize.DataTypes.STRING,
       allowNull: false,
       unique: true,
       validate: {
@@ -10,11 +10,11 @@ const User = db.define("User", {
       },
     },
     name: {
-      type: DataTypes.STRING,
+      type: Sequelize.DataTypes.STRING,
       allowNull: false,
     },
     password: {
-      type: DataTypes.STRING,
+      type: Sequelize.DataTypes.STRING,
       allowNull: false,
     },
   }, {

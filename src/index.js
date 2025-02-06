@@ -1,9 +1,16 @@
 import express from "express";
 import { db } from "./config/config.js";
 import dotenv from "dotenv";
+import userRoute from "./route/user.route.js";
+import bodyParser from "body-parser";
+
 dotenv.config()
 
 const app = express();
+
+
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: true }));
 
 let  connMessage = ""
 try {
@@ -18,11 +25,11 @@ try {
     
 }
 
+app.use(userRoute)
 
-app.get('/', (req, res) => {
-    res.json({ message:  'We can do it now and today. Yay!! 🌟', connection: connMessage });
 
-});
+
+
 
 console.log(process.env.HOST, " hello hello")
 console.log(process.env.POSTGRES_DB, " hello hello again")

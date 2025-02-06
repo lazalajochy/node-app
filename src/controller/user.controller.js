@@ -1,7 +1,7 @@
 import User from "../model/user.mode.js";
 
 export const createUser = async (req, res) => {
-    console.log(req.body)
+    console.log(req.body, "hello")
     try {
       const { email, name, password } = req.body;
       

@@ -1,0 +1,27 @@
+apiVersion: serving.knative.dev/v1
+kind: Service
+metadata:
+  annotations:
+    run.googleapis.com/ingress: all
+    run.googleapis.com/ingress-status: all
+    run.googleapis.com/launch-stage: BETA
+  generation: 4
+  labels:
+    cloud.googleapis.com/location: $DEPLOY_REGION
+  name: $SERVICE_NAME
+spec:  
+  template:  
+    metadata:  
+      annotations: 
+        autoscaling.knative.dev/minScale: $MIN_SCALE
+        autoscaling.knative.dev/maxScale: $MAX_SCALE
+        run.googleapis.com/sandbox: gvisor
+    spec:  
+      containerConcurrency: 100
+      serviceAccountName: $_SERVICE_ACCOUNT
+      containers:  
+        - env:  
+            - name: DATABASE_NAME  
+              value: "$_DATABASE_NAME"
+              NAME: HOST
+              VALUE: "$_HOST"

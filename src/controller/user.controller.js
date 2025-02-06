@@ -10,6 +10,7 @@ export const createUser = async (req, res) => {
       }
   
       const user = await User.create({ email, name, password });
+      console.log(user, " this is the user")
       res.status(201).json(user);
     } catch (error) {
       res.status(400).json({ error: error.message });

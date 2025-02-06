@@ -24,6 +24,7 @@ app.get('/', (req, res) => {
 
 });
 
+console.log(process.env.HOST, " hello hello")
 app.listen(3000, () => {
-    console.log(`App is listening on port 3000 ${dotenv.env.HOST}, this is the host`);
+    console.log(`App is listening on port 3000`);
 });

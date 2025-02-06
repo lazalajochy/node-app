@@ -23,5 +23,11 @@ spec:
         - env:  
             - name: DATABASE_NAME  
               value: "$_DATABASE_NAME"
-              NAME: HOST
-              VALUE: "$_HOST"
+            - name: HOST
+              value: "$_HOST"
+            - name: POSTGRES_DB
+              value: "$_POSTGRES_DB"
+            - name: POSTGRES_USER
+              value: "$_POSTGRES_USER"
+            - name: POSTGRES_PASSWORD
+              value: "$_POSTGRES_PASSWORD"
